@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishak Chaturvedi – Portfolio</title>
+  <meta name="description"
+    content="Personal portfolio of Abhishak Chaturvedi — Software Developer passionate about AI, modern web technology, and impactful solutions." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            peach: { light: '#F2B28A', DEFAULT: '#D8876E', dark: '#C06A50' },
+            cream: '#F4EBD8',
+            beige: '#EDE4D0',
+            slate: { soft: '#D4DAE0', muted: '#8A9BAE', deep: '#5B6F82' },
+            charcoal: '#2B2B2B',
+            muted: '#6B6B6B',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="font-body text-charcoal bg-cream antialiased">
+
+  <!-- ═══════════════════════════════════════════════════
+       1. NAVIGATION BAR
+  ═══════════════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
+      <a href="#about" class="font-display text-xl lg:text-2xl font-semibold tracking-tight text-charcoal">
+        Abhishak<span class="text-peach">.</span>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#training" class="nav-link">Training</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button id="menu-toggle" class="lg:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Toggle menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu-overlay">
+      <ul class="flex flex-col items-center gap-6 text-lg font-medium">
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#resume" class="mobile-link">Resume</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#training" class="mobile-link">Training</a></li>
+        <li><a href="#certificates" class="mobile-link">Certificates</a></li>
+        <li><a href="#achievements" class="mobile-link">Achievements</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       2. ABOUT / PERSONAL INFORMATION
+  ═══════════════════════════════════════════════════ -->
+  <section id="about" class="pt-28 md:pt-36 pb-24 md:pb-32 bg-cream">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 md:gap-16 fade-up">
+        <!-- Left Column: Profile Image & Socials -->
+        <div class="shrink-0 flex flex-col items-center md:items-start pt-2">
+          <div class="relative mb-6">
+            <div
+              class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-[4px] border-white shadow-xl relative z-10 bg-cream">
+              <img src="assets/images/profile photo.jpeg" alt="Abhishak Chaturvedi profile picture"
+                class="w-full h-full object-cover" />
+            </div>
+            <div class="absolute inset-0 bg-peach/30 blur-2xl rounded-full scale-110 -z-10"></div>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <!-- LeetCode -->
+            <a href="https://leetcode.com/u/2xydTYsNnY/" target="_blank"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-charcoal"
+              aria-label="LeetCode">
+              <img src="assets/images/leetcode.png" alt="LeetCode" class="w-8 h-8 object-contain" />
+            </a>
+            <!-- CodeChef -->
+            <a href="https://www.codechef.com/users/abhishak1305" target="_blank"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-charcoal"
+              aria-label="CodeChef">
+              <img src="assets/images/codechef.png" alt="CodeChef" class="w-8 h-8 object-contain" />
+            </a>
+            <!-- GeeksforGeeks -->
+            <a href="https://www.geeksforgeeks.org/profile/abhisha06jw?tab=activity" target="_blank"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-charcoal"
+              aria-label="GeeksforGeeks">
+              <img src="assets/images/gfg.png" alt="GeeksforGeeks" class="w-8 h-8 object-contain" />
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/abhishak-chaturvedi" target="_blank"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-charcoal"
+              aria-label="LinkedIn">
+              <img src="assets/images/linkedin.png" alt="LinkedIn" class="w-8 h-8 object-contain" />
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/abhishak1305" target="_blank"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all text-charcoal"
+              aria-label="GitHub">
+              <img src="assets/images/github.png" alt="GitHub" class="w-8 h-8 object-contain" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: About Text & Buttons -->
+        <div class="flex-1 text-center md:text-left pt-2">
+          <p class="section-tag">Get to Know Me</p>
+          <h2 class="section-heading mb-6">About Me</h2>
+          <p class="text-lg md:text-xl text-muted leading-relaxed mb-8">
+            I'm <strong class="text-charcoal">Abhishak Chaturvedi</strong>, a B.Tech student in Computer Science &
+            Engineering
+            at Lovely Professional University (CGPA: 8.40). I specialize in building full-stack applications with
+            <strong class="text-charcoal">React, Node.js, MongoDB</strong>, and love crafting elegant user experiences.
+            With strong foundations in <strong class="text-charcoal">C/C++, Java, and Data Structures</strong>, I thrive
+            on solving complex problems
+            and shipping impactful products.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-20">
+            <a href="#resume" class="btn-primary">View Resume</a>
+            <a href="#projects" class="btn-secondary">Explore My Work</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills – Categorized -->
+      <div class="mb-20 fade-up">
+        <h3 class="font-display text-2xl md:text-3xl text-center mb-12">Skills & Technologies</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="layout" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-4">Front End</h4>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">Tailwind CSS</span>
+              <span class="skill-pill">JavaScript</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="server" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-4">Back End</h4>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Express.js</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">PHP</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="database" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-4">Database & Tools</h4>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">Socket.io</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="sparkles" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-4">Other Skills</h4>
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="skill-pill">C/C++</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">DSA</span>
+              <span class="skill-pill">Time Mgmt</span>
+              <span class="skill-pill">Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="fade-up">
+        <h3 class="font-display text-2xl md:text-3xl text-center mb-10">Education</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="card group">
+            <div
+              class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mb-4 group-hover:bg-peach/30 transition-colors">
+              <i data-lucide="graduation-cap" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-1">B.Tech – CSE</h4>
+            <p class="text-peach font-medium text-sm mb-2">Lovely Professional University</p>
+            <p class="text-muted text-sm">Jun 2023 – Present &nbsp;·&nbsp; CGPA: 8.40</p>
+            <p class="text-muted text-sm mt-2">Phagwara, Punjab</p>
+          </div>
+          <div class="card group">
+            <div
+              class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mb-4 group-hover:bg-peach/30 transition-colors">
+              <i data-lucide="school" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-1">Class XII</h4>
+            <p class="text-peach font-medium text-sm mb-2">Mahi International School</p>
+            <p class="text-muted text-sm">Apr 2021 – May 2022 &nbsp;·&nbsp; 84.60%</p>
+            <p class="text-muted text-sm mt-2">Agra, Uttar Pradesh</p>
+          </div>
+          <div class="card group">
+            <div
+              class="w-12 h-12 rounded-xl bg-peach/20 flex items-center justify-center mb-4 group-hover:bg-peach/30 transition-colors">
+              <i data-lucide="book-open" class="w-6 h-6 text-peach"></i>
+            </div>
+            <h4 class="font-display text-lg font-semibold mb-1">Class X</h4>
+            <p class="text-peach font-medium text-sm mb-2">Army Public School</p>
+            <p class="text-muted text-sm">Apr 2019 – May 2020 &nbsp;·&nbsp; 87.20%</p>
+            <p class="text-muted text-sm mt-2">Agra, Uttar Pradesh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       3. RESUME SECTION
+  ═══════════════════════════════════════════════════ -->
+  <section id="resume" class="py-24 md:py-32 bg-beige">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center fade-up">
+      <p class="section-tag">My Credentials</p>
+      <h2 class="section-heading">Resume</h2>
+      <p class="text-muted text-lg max-w-xl mx-auto mb-10">
+        Download my latest resume to learn more about my education, experience, and skills.
+      </p>
+      <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 max-w-lg mx-auto mb-10">
+        <div class="w-16 h-16 rounded-2xl bg-peach/20 flex items-center justify-center mx-auto mb-6">
+          <i data-lucide="file-text" class="w-8 h-8 text-peach"></i>
+        </div>
+        <h3 class="font-display text-2xl font-semibold mb-2">Abhishak Chaturvedi</h3>
+        <p class="text-muted mb-1">B.Tech CSE – Lovely Professional University</p>
+        <p class="text-muted text-sm mb-6">Full-Stack Developer &nbsp;·&nbsp; Problem Solver</p>
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+          <span class="text-xs px-3 py-1 rounded-full bg-cream text-muted">React</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-cream text-muted">Node.js</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-cream text-muted">MongoDB</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-cream text-muted">C++</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-cream text-muted">Java</span>
+        </div>
+        <a href="assets/resume.pdf" target="_blank" class="btn-primary inline-flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       4. WORK EXPERIENCE
+  ═══════════════════════════════════════════════════ -->
+  <section id="experience" class="py-24 md:py-32 bg-cream">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <p class="section-tag">Where I've Worked</p>
+        <h2 class="section-heading">Work Experience</h2>
+      </div>
+      <div class="max-w-4xl mx-auto fade-up">
+        <div class="card card-hover group">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+            <div>
+              <h4 class="font-display text-2xl font-semibold">Hide & Seek Security Solutions</h4>
+              <p class="text-peach font-medium mt-1">Freelancer</p>
+            </div>
+            <span class="text-sm text-muted bg-cream px-4 py-1.5 rounded-full whitespace-nowrap mt-2 md:mt-0">Aug – Sep
+              2024</span>
+          </div>
+          <ul class="space-y-3 text-muted leading-relaxed mb-6">
+            <li class="flex gap-3"><span class="text-peach mt-1 shrink-0">•</span>Deployed a 5-page product website
+              leveraging responsive design, enhancing online visibility and customer engagement for a CCTV firm.</li>
+            <li class="flex gap-3"><span class="text-peach mt-1 shrink-0">•</span>Developed a mobile-first UI with
+              Tailwind CSS, maintaining strict Git version control to streamline iterative client updates.</li>
+            <li class="flex gap-3"><span class="text-peach mt-1 shrink-0">•</span>Designed custom marketing assets for
+              seasonal promotions, successfully driving a 60% increase in social media engagement.</li>
+            <li class="flex gap-3"><span class="text-peach mt-1 shrink-0">•</span>Accelerated the development lifecycle,
+              delivering the project 10 days early and earning a bonus for bug-free deployment.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Git</span>
+          </div>
+          <a href="https://hideandseeksecuritysolutions.com" target="_blank"
+            class="inline-flex items-center gap-1.5 text-peach font-medium hover:underline">
+            <i data-lucide="external-link" class="w-4 h-4"></i> View Live Site
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       5. PROJECTS SECTION
+  ═══════════════════════════════════════════════════ -->
+  <section id="projects" class="py-24 md:py-32 bg-beige">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <p class="section-tag">What I've Built</p>
+        <h2 class="section-heading">Projects</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- getWork -->
+        <div class="project-card group fade-up">
+          <div class="project-card-img">
+            <img src="assets/images/getwork.png" alt="getWork Project"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="project-overlay">
+              <a href="https://github.com/abhishak1305/Freelancer.git" target="_blank" class="overlay-btn"><i
+                  data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+              <a href="https://freelancer-1-0i0p.onrender.com/" target="_blank" class="overlay-btn"><i
+                  data-lucide="external-link" class="w-4 h-4"></i> Live
+                Demo</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-muted">Oct 2025 – Dec 2025</span>
+            <h4 class="font-display text-lg font-semibold mt-2 mb-2">getWork</h4>
+            <p class="text-sm text-muted leading-relaxed mb-4">MERN-stack marketplace with RESTful APIs and JWT Auth for
+              secure bidding-to-fulfillment workflows. Real-time chat via Socket.io with sub-200ms latency.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">MongoDB</span><span class="tech-tag">Express.js</span><span
+                class="tech-tag">React</span><span class="tech-tag">Node.js</span><span
+                class="tech-tag">Socket.io</span><span class="tech-tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+        <!-- HobbyHub -->
+        <div class="project-card group fade-up">
+          <div class="project-card-img">
+            <img src="assets/images/hobbyhub.png" alt="HobbyHub Project"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="project-overlay">
+              <a href="https://github.com/abhishak1305/Hobby-Hub-community-platform.git" target="_blank"
+                class="overlay-btn"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+              <a href="https://hobbyhub.ct.ws/" target="_blank" class="overlay-btn"><i data-lucide="external-link"
+                  class="w-4 h-4"></i> Live
+                Demo</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-muted">Feb 2025 – Apr 2025</span>
+            <h4 class="font-display text-lg font-semibold mt-2 mb-2">HobbyHub</h4>
+            <p class="text-sm text-muted leading-relaxed mb-4">Centralized PHP web platform using MVC architecture
+              enabling 10+ student clubs to manage events and content. Robust auth via OTP, PHP, and SMTP integration.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span
+                class="tech-tag">JavaScript</span><span class="tech-tag">HTML</span><span
+                class="tech-tag">CSS</span><span class="tech-tag">SMTP</span>
+            </div>
+          </div>
+        </div>
+        <!-- Missing Person Finder -->
+        <div class="project-card group fade-up">
+          <div class="project-card-img">
+            <img src="assets/images/missing person identifier.png" alt="HobbyHub Project"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="project-overlay">
+              <a href="https://github.com/abhishak1305" target="_blank" class="overlay-btn"><i data-lucide="github"
+                  class="w-4 h-4"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-muted">Jun 2025 – Jul 2025</span>
+            <h4 class="font-display text-lg font-semibold mt-2 mb-2">Missing Person Finder</h4>
+            <p class="text-sm text-muted leading-relaxed mb-4">Capstone project applying Binary Search Trees and Hash
+              Map data structures to strategically locate missing persons. Built during LPU algorithmic training.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-tag">C++</span><span class="tech-tag">DSA</span><span class="tech-tag">Binary
+                Trees</span><span class="tech-tag">Hash Maps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       6. TRAINING SECTION
+  ═══════════════════════════════════════════════════ -->
+  <section id="training" class="py-24 md:py-32 bg-cream">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <p class="section-tag">Continuous Learning</p>
+        <h2 class="section-heading">Training</h2>
+      </div>
+      <div class="max-w-4xl mx-auto space-y-8">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow fade-up">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-14 h-14 rounded-xl bg-peach/20 flex items-center justify-center shrink-0">
+              <i data-lucide="code-2" class="w-7 h-7 text-peach"></i>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                <h4 class="font-display text-xl font-semibold">Logic Building, Programming & Data Structures</h4>
+                <span class="text-sm text-muted bg-cream px-3 py-1 rounded-full mt-2 md:mt-0">Jun 2025 – Jul 2025</span>
+              </div>
+              <p class="text-peach font-medium mb-4">Lovely Professional University (LPU)</p>
+              <div class="text-sm text-muted leading-relaxed space-y-3 mb-5">
+                <p>An intensive <strong class="text-charcoal">5-week summer training program</strong> designed to
+                  strengthen algorithmic thinking and build a deep understanding of core data structures in C++.</p>
+                <p>Participated in daily coding assessments, timed challenges, and peer reviews. Achieved the highest
+                  possible <strong class="text-charcoal">"O" Grade (90%+)</strong> across all technical assessments.</p>
+                <p>Engineered a <strong class="text-charcoal">"Missing Person Finder"</strong> capstone project by
+                  strategically applying Binary Search Trees and Hash Map data structures.</p>
+              </div>
+              <h5 class="text-sm font-semibold text-charcoal mb-2">Key Skills Learned</h5>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tech-tag">C++</span><span class="tech-tag">Data Structures</span><span
+                  class="tech-tag">Algorithms</span><span class="tech-tag">Problem Solving</span><span
+                  class="tech-tag">Binary Trees</span><span class="tech-tag">Hash Maps</span><span
+                  class="tech-tag">Recursion</span><span class="tech-tag">Graph Theory</span>
+              </div>
+              <div class="flex gap-4">
+                <a href="https://github.com/abhishak1305" target="_blank"
+                  class="text-peach text-sm font-medium hover:underline inline-flex items-center gap-1"><i
+                    data-lucide="github" class="w-3.5 h-3.5"></i> GitHub</a>
+                <a href="certificates/summer training certificate 2025 - LPU-images-0.jpg" target="_blank"
+                  class="text-peach text-sm font-medium hover:underline inline-flex items-center gap-1"><i
+                    data-lucide="award" class="w-3.5 h-3.5"></i> Certificate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       7. CERTIFICATES — 3D Carousel Slideshow
+  ═══════════════════════════════════════════════════ -->
+  <section id="certificates" class="py-24 md:py-32 bg-beige overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <p class="section-tag">Credentials</p>
+        <h2 class="section-heading">Certificates</h2>
+        <p class="text-muted mt-4 max-w-xl mx-auto">A curated collection of my professional certifications and course
+          completions.</p>
+      </div>
+
+      <!-- Carousel -->
+      <div class="carousel-wrapper fade-up">
+        <button id="carousel-prev" class="carousel-arrow carousel-arrow-left" aria-label="Previous">
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+        <div id="carousel-track" class="carousel-track">
+          <!-- Rendered by JS -->
+        </div>
+        <button id="carousel-next" class="carousel-arrow carousel-arrow-right" aria-label="Next">
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Active certificate info -->
+      <div class="text-center mt-8 fade-up">
+        <h4 id="carousel-cert-name"
+          class="font-display text-xl font-semibold text-charcoal transition-all duration-300"></h4>
+        <p id="carousel-cert-org" class="text-peach font-medium text-sm mt-1 transition-all duration-300"></p>
+      </div>
+
+      <!-- Dots -->
+      <div id="carousel-dots" class="flex justify-center gap-2 mt-6 flex-wrap"></div>
+
+      <!-- Show All toggle -->
+      <div class="text-center mt-10 fade-up">
+        <button id="cert-toggle-btn" class="btn-secondary inline-flex items-center gap-2">
+          <i data-lucide="grid-3x3" class="w-4 h-4"></i>
+          <span>Show All Certificates</span>
+        </button>
+      </div>
+
+      <!-- Full grid (hidden) -->
+      <div id="cert-all-grid" class="hidden mt-12">
+        <div id="cert-all-grid-inner" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Certificate Modal -->
+  <div id="cert-modal" class="cert-modal">
+    <button class="cert-modal-close" aria-label="Close">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <div class="cert-modal-body"></div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       8. ACHIEVEMENTS SECTION
+  ═══════════════════════════════════════════════════ -->
+  <section id="achievements" class="py-24 md:py-32 bg-cream">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <p class="section-tag">Milestones</p>
+        <h2 class="section-heading">Achievements</h2>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="relative border-l-2 border-peach/30 pl-8 space-y-12">
+          <div class="relative fade-up">
+            <div class="absolute -left-[41px] top-1 w-8 h-8 rounded-full bg-peach/20 flex items-center justify-center">
+              <i data-lucide="users" class="w-4 h-4 text-peach"></i>
+            </div>
+            <span class="text-xs text-muted">Oct 2025 – Present</span>
+            <h4 class="font-display text-lg font-semibold mt-1">Class Representative</h4>
+            <p class="text-sm text-muted mt-1 leading-relaxed">Representing 60+ students, coordinating academic
+              communication between faculty and students.</p>
+          </div>
+          <div class="relative fade-up">
+            <div class="absolute -left-[41px] top-1 w-8 h-8 rounded-full bg-peach/20 flex items-center justify-center">
+              <i data-lucide="shield" class="w-4 h-4 text-peach"></i>
+            </div>
+            <span class="text-xs text-muted">Jan 2024</span>
+            <h4 class="font-display text-lg font-semibold mt-1">Top 15 Finalist – Encrypted Edge Hackathon</h4>
+            <p class="text-sm text-muted mt-1 leading-relaxed">Ranked in the top 7% (Top 15 out of 200+ teams) in a
+              university-level cybersecurity hackathon.</p>
+          </div>
+          <div class="relative fade-up">
+            <div class="absolute -left-[41px] top-1 w-8 h-8 rounded-full bg-peach/20 flex items-center justify-center">
+              <i data-lucide="star" class="w-4 h-4 text-peach"></i>
+            </div>
+            <span class="text-xs text-muted">Jan 2024</span>
+            <h4 class="font-display text-lg font-semibold mt-1">Academic Excellence</h4>
+            <p class="text-sm text-muted mt-1 leading-relaxed">Achieved an 'O' Grade (90%+) in core C/C++ programming
+              coursework.</p>
+          </div>
+          <div class="relative fade-up">
+            <div class="absolute -left-[41px] top-1 w-8 h-8 rounded-full bg-peach/20 flex items-center justify-center">
+              <i data-lucide="code" class="w-4 h-4 text-peach"></i>
+            </div>
+            <span class="text-xs text-muted">Mar 2026</span>
+            <h4 class="font-display text-lg font-semibold mt-1">Competitive Programming</h4>
+            <p class="text-sm text-muted mt-1 leading-relaxed">Solved 200+ Data Structures & Algorithms problems across
+              LeetCode and GeeksforGeeks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       9. CONTACT SECTION
+  ═══════════════════════════════════════════════════ -->
+  <section id="contact" class="py-24 md:py-32 bg-gradient-to-br from-slate-deep to-[#3D5468] text-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <p class="text-sm uppercase tracking-[0.25em] text-slate-soft/80 font-medium mb-4">Reach Out</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">Let's build something<br /><span
+            class="italic text-peach-light">meaningful</span> together.</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div class="space-y-8 fade-up">
+          <div>
+            <h3 class="font-display text-2xl font-semibold mb-6">Contact Details</h3>
+            <ul class="space-y-5">
+              <li class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i data-lucide="mail"
+                    class="w-5 h-5 text-peach-light"></i></div><a href="mailto:abhishak1305@gmail.com"
+                  class="text-white/80 hover:text-white transition-colors">abhishak1305@gmail.com</a>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i data-lucide="phone"
+                    class="w-5 h-5 text-peach-light"></i></div><a href="tel:+919319967828"
+                  class="text-white/80 hover:text-white transition-colors">+91 9319967828</a>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i data-lucide="linkedin"
+                    class="w-5 h-5 text-peach-light"></i></div><a href="https://linkedin.com/in/abhishak-chaturvedi"
+                  target="_blank"
+                  class="text-white/80 hover:text-white transition-colors">linkedin.com/in/abhishak-chaturvedi</a>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center"><i data-lucide="github"
+                    class="w-5 h-5 text-peach-light"></i></div><a href="https://github.com/abhishak1305" target="_blank"
+                  class="text-white/80 hover:text-white transition-colors">github.com/abhishak1305</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fade-up">
+          <form id="contact-form" class="space-y-5">
+            <div><label for="name" class="block text-sm font-medium text-white/70 mb-2">Name</label><input type="text"
+                id="name" name="name" required placeholder="Your name"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-peach-light/50 focus:ring-1 focus:ring-peach-light/30 transition-all" />
+            </div>
+            <div><label for="email" class="block text-sm font-medium text-white/70 mb-2">Email</label><input
+                type="email" id="email" name="email" required placeholder="your@email.com"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-peach-light/50 focus:ring-1 focus:ring-peach-light/30 transition-all" />
+            </div>
+            <div><label for="message" class="block text-sm font-medium text-white/70 mb-2">Message</label><textarea
+                id="message" name="message" rows="4" required placeholder="Your message…"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-peach-light/50 focus:ring-1 focus:ring-peach-light/30 transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full flex items-center justify-center gap-2"><i
+                data-lucide="send" class="w-4 h-4"></i> Send Message</button>
+          </form>
+          <p id="form-success" class="hidden mt-4 text-center text-peach-light font-medium">✓ Message sent successfully!
+            I'll get back to you soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       10. FOOTER
+  ═══════════════════════════════════════════════════ -->
+  <footer class="bg-charcoal text-white/60 py-10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <a href="#about" class="font-display text-lg font-semibold text-white">Abhishak<span
+            class="text-peach">.</span></a>
+        <p class="text-sm mt-1">&copy; 2026 Abhishak Chaturvedi. All rights reserved.</p>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="mailto:abhishak1305@gmail.com" aria-label="Email" class="footer-icon"><i data-lucide="mail"
+            class="w-5 h-5"></i></a>
+        <a href="https://linkedin.com/in/abhishak-chaturvedi" target="_blank" aria-label="LinkedIn"
+          class="footer-icon"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        <a href="https://github.com/abhishak1305" target="_blank" aria-label="GitHub" class="footer-icon"><i
+            data-lucide="github" class="w-5 h-5"></i></a>
+        <a href="tel:+919319967828" aria-label="Phone" class="footer-icon"><i data-lucide="phone"
+            class="w-5 h-5"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
