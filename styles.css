@@ -311,7 +311,13 @@ body { overflow-x: hidden; }
 
 
 /* ── Navbar ──────────────────────────────────────── */
-.nav-link { position: relative; color: #2B2B2B; transition: color 0.3s ease; }
+.nav-link { 
+  position: relative; 
+  color: #2B2B2B; 
+  font-family: 'Playfair Display', Georgia, serif; 
+  font-size: 1.05rem;
+  transition: color 0.3s ease; 
+}
 .nav-link::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
   width: 0; height: 2px; background: #D8876E; border-radius: 1px;
