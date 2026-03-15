@@ -326,12 +326,37 @@ document.addEventListener('DOMContentLoaded', () => {
       const orig = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '<svg class="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="31.42 31.42"/></svg> Sending…';
-      setTimeout(() => {
-        btn.innerHTML = '✓ Sent!';
-        formOk.classList.remove('hidden');
-        form.reset();
-        setTimeout(() => { btn.disabled = false; btn.innerHTML = orig; lucide.createIcons(); }, 3000);
-      }, 1500);
+      
+      // Use EmailJS to send the form
+      // service_id: 'service_5gsc6gq', template_id: 'template_xzl84zg'
+      emailjs.sendForm('service_5gsc6gq', 'template_xzl84zg', form)
+        .then(() => {
+          btn.innerHTML = '✓ Sent!';
+          formOk.classList.remove('hidden');
+          formOk.textContent = "✓ Message sent successfully! I'll get back to you soon.";
+          formOk.classList.replace('text-red-400', 'text-peach-light');
+          form.reset();
+          
+          setTimeout(() => { 
+            btn.disabled = false; 
+            btn.innerHTML = orig; 
+            if (window.lucide) { lucide.createIcons(); }
+            formOk.classList.add('hidden');
+          }, 4000);
+        })
+        .catch((error) => {
+          console.error("EmailJS Error:", error);
+          btn.innerHTML = '✕ Failed';
+          formOk.classList.remove('hidden');
+          formOk.textContent = "✕ Oops! Something went wrong. Please try again later.";
+          formOk.classList.replace('text-peach-light', 'text-red-400');
+          
+          setTimeout(() => { 
+            btn.disabled = false; 
+            btn.innerHTML = orig; 
+            if (window.lucide) { lucide.createIcons(); }
+          }, 3000);
+        });
     });
   }
 
