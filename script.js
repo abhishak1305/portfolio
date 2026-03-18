@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
       setTimeout(() => {
         preloader.remove();
       }, 0);
-    }, 2800);
+    }, 2600);
   }
 });
 
