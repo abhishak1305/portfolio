@@ -18,8 +18,8 @@ window.addEventListener('load', () => {
       // Remove element completely after transition (500ms)
       setTimeout(() => {
         preloader.remove();
-      }, 500);
-    }, 4000);
+      }, 0);
+    }, 2800);
   }
 });
 
