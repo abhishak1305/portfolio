@@ -7,6 +7,26 @@ html { scroll-behavior: smooth; }
 body { overflow-x: hidden; }
 ::selection { background-color: #D8876E; color: #fff; }
 
+/* ── Preloader ───────────────────────────────────── */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #F4EBD8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#preloader img {
+  width: clamp(300px, 50vw, 600px); /* Larger size for better visibility */
+  height: auto;
+}
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* ── Typography ──────────────────────────────────── */
 .section-tag {
   font-size: 0.75rem;
@@ -411,3 +431,73 @@ body { overflow-x: hidden; }
 ::-webkit-scrollbar-track { background: #F4EBD8; }
 ::-webkit-scrollbar-thumb { background: #D8876E; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #C06A50; }
+
+/* ---------------------------------------------------
+   PRELOADER ANIMATION
+   --------------------------------------------------- */
+#preloader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.5s ease;
+}
+.anim-scene {
+  position: absolute;
+  width: 240px; height: 240px;
+  stroke: #E8432D; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  fill: #fff; pointer-events: none;
+}
+.anim-scene [fill="none"] { fill: none !important; }
+.anim-scene.no-fill { fill: none !important; }
+
+/* Airplane: 0-2s (0% - 33.33%) */
+.scene-airplane {
+  opacity: 1; animation: planeAnim 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes planeAnim {
+  0% { transform: scale(0.2) translateX(-100px); opacity: 0; }
+  5% { transform: scale(1) translateX(0); opacity: 1; }
+  15% { transform: scale(1) translateY(-8px); }
+  25% { transform: scale(1) translateY(8px); }
+  31% { transform: scale(1) translateY(0); opacity: 1; }
+  33.33% { transform: scaleY(0.1) translateY(0); opacity: 0; }
+  100% { transform: scaleY(0.1) translateY(0); opacity: 0; }
+}
+
+/* Car: 2-4s (33.33% - 66.66%) */
+.scene-car {
+  opacity: 0; animation: carAnim 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes carAnim {
+  0%, 31% { opacity: 0; transform: scaleY(0.1); }
+  33.33% { opacity: 1; transform: scaleY(1); }
+  42% { transform: translateY(-8px); }
+  50% { transform: translateY(0); }
+  58% { transform: translateY(-4px); }
+  64% { opacity: 1; transform: translateY(0) scaleY(1); }
+  66.66% { opacity: 0; transform: translateY(-20px) scaleY(1.5); }
+  100% { opacity: 0; }
+}
+
+/* Building: 4-6s (66.66% - 100%) */
+.scene-building {
+  opacity: 0; animation: bldgAnim 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes bldgAnim {
+  0%, 64% { opacity: 0; transform: translateY(-20px) scaleY(1.5); }
+  66.66% { opacity: 1; transform: translateY(0) scaleY(1); }
+  72% { transform: scale(1.03); }
+  76%, 95% { transform: scale(1); opacity: 1; }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.drifting-cloud { animation: drift 2s linear infinite; }
+@keyframes drift { 0% { transform: translateX(5px); } 50% { transform: translateX(-5px); } 100% { transform: translateX(5px); } }
+.speed-line { animation: dashSpeed 0.5s linear infinite; }
+@keyframes dashSpeed { 0% { transform: translateX(0); } 100% { transform: translateX(-10px); opacity: 0; } }
+
+.building-path { stroke-dasharray: 400; stroke-dashoffset: 400; animation: drawBldg 6s ease-out forwards; }
+@keyframes drawBldg { 0%, 65% { stroke-dashoffset: 400; } 72%, 100% { stroke-dashoffset: 0; } }
+.window-path { opacity: 0; animation: popWindow 6s ease-out forwards; transform-origin: center; }
+@keyframes popWindow { 0%, 72% { opacity: 0; transform: scale(0); } 76%, 100% { opacity: 1; transform: scale(1); } }
+
