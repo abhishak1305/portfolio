@@ -344,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact form
   const form = document.getElementById('contact-form');
   const formOk = document.getElementById('form-success');
+  const contactGif = document.getElementById('contact-gif');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -360,6 +361,9 @@ document.addEventListener('DOMContentLoaded', () => {
           formOk.classList.remove('hidden');
           formOk.textContent = "✓ Message sent successfully! I'll get back to you soon.";
           formOk.classList.replace('text-red-400', 'text-peach-light');
+          if (contactGif) {
+            contactGif.src = 'assets/thankyou.gif';
+          }
           form.reset();
 
           setTimeout(() => {
@@ -367,7 +371,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = orig;
             if (window.lucide) { lucide.createIcons(); }
             formOk.classList.add('hidden');
-          }, 4000);
+            if (contactGif) {
+              contactGif.src = 'assets/sendmail.gif';
+            }
+          }, 10000);
         })
         .catch((error) => {
           console.error("EmailJS Error:", error);

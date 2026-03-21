@@ -407,6 +407,22 @@ body { overflow-x: hidden; }
   box-shadow: 0 6px 16px rgba(192,106,80,0.5);
 }
 
+/* ── Contact GIF ─────────────────────────────────── */
+.contact-gif {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.contact-gif:hover {
+  transform: scale(1.02);
+}
+
+
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 768px) {
   .carousel-slide { width: 260px; }
