@@ -75,11 +75,26 @@ body { overflow-x: hidden; }
   background: #2B2B2B; color: #fff; transform: translateY(-2px);
 }
 
+/* ── Cat Mascot ──────────────────────────────────── */
+.cat-mascot {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px; /* Matching common logo/icon sizing */
+  height: auto;
+  pointer-events: none;
+  z-index: 10;
+  margin-bottom: -4px; /* Slight overlap to look like it's sitting *on* the button */
+}
+
 /* ── Cards ───────────────────────────────────────── */
 .card {
   background: #fff; border-radius: 1.25rem; padding: 1.75rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  isolation: isolate;
 }
 .card-hover:hover {
   transform: translateY(-4px);
@@ -111,15 +126,21 @@ body { overflow-x: hidden; }
 
 /* ── Project Cards ───────────────────────────────── */
 .project-card {
-  background: #fff; border-radius: 1.25rem; overflow: hidden;
+  background: #fff; border-radius: 1.25rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  isolation: isolate;
 }
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.1);
 }
-.project-card-img { position: relative; height: 200px; overflow: hidden; }
+.project-card-img {
+  position: relative; height: 200px; overflow: hidden;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
 
 
 
@@ -253,10 +274,11 @@ body { overflow-x: hidden; }
 .cert-grid-card {
   background: #fff;
   border-radius: 1rem;
-  overflow: hidden;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
   cursor: pointer;
+  position: relative;
+  isolation: isolate;
 }
 .cert-grid-card:hover {
   transform: translateY(-4px);
@@ -268,6 +290,8 @@ body { overflow-x: hidden; }
   object-fit: contain;
   background: #f9f5ee;
   padding: 6px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 .cert-grid-card-info {
   padding: 0.75rem 1rem;
@@ -441,6 +465,46 @@ body { overflow-x: hidden; }
   .carousel-slide.slide-left { left: calc(50% - 240px); }
   .carousel-slide.slide-right { left: calc(50% + 20px); }
 }
+
+/* ── Animated Glowing Borders ────────────────────── */
+.training-card { 
+  position: relative;
+  isolation: isolate; 
+}
+
+.card::before, .project-card::before, .cert-grid-card::before, .training-card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: -2;
+  background: linear-gradient(45deg, #D8876E, #F4EBD8, #D8876E, #F4EBD8);
+  background-size: 300% 300%;
+  filter: blur(6px);
+  animation: glowBorder 4s ease infinite alternate;
+}
+
+.card::after, .project-card::after, .cert-grid-card::after, .training-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fff;
+}
+
+.card::before, .project-card::before { border-radius: 1.5rem; }
+.cert-grid-card::before { border-radius: 1.25rem; }
+.training-card::before { border-radius: 1.25rem; }
+
+.card::after, .project-card::after { border-radius: 1.25rem; }
+.cert-grid-card::after { border-radius: 1rem; }
+.training-card::after { border-radius: 1rem; }
+
+@keyframes glowBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* ── Scrollbar ───────────────────────────────────── */
 ::-webkit-scrollbar { width: 8px; }
