@@ -206,9 +206,9 @@ function initShowAllToggle() {
     } else {
       grid.classList.add('hidden');
       btnSpan.textContent = 'Show All Certificates';
-      btnIcon.setAttribute('data-lucide', 'grid-3x3');
+      btnIcon.setAttribute('data-lucide', 'layout-grid');
     }
-    lucide.createIcons();
+    if (window.lucide) { lucide.createIcons(); }
   });
 }
 
@@ -277,8 +277,15 @@ function initModal() {
    DOMContentLoaded — all init
    ═══════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Lucide icons
-  lucide.createIcons();
+  // Lucide icons with a small delay or fallback ensure CDN load
+  const loadIcons = () => {
+    if (window.lucide) {
+      lucide.createIcons();
+    } else {
+      setTimeout(loadIcons, 100);
+    }
+  };
+  loadIcons();
 
   // Scroll fade-in
   const fadeEls = document.querySelectorAll('.fade-up');
